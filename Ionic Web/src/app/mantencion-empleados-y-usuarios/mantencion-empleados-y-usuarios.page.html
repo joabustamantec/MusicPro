@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>
+      mantencion productos y usuarios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="fondoo">
+  <div class="lista">
+  <h1>LISTA DE EMPLEADOS Y USUARIOS</h1>
+   <ion-list *ngFor="let pr of lista_productos" >
+     <ion-item-sliding>
+     <ion-item (click)="buscarProducto(pr.id_producto)">
+       <ion-label>{{pr.id_producto}} - {{pr.nombre}} - ${{pr.precio}} - {{pr.stock}}</ion-label>
+       <ion-label>{{pr.fecha_caducidad | date: 'dd/mm/yyyy'}}</ion-label>
+     </ion-item>
+     <ion-item-options side="end">
+       <ion-item-option (click)="alertarEliminar(pr.id_producto)">ELIMINAR</ion-item-option> 
+     </ion-item-options>
+    </ion-item-sliding>
+   </ion-list>
+  </div>
+
+
+   <div class="mantenedor">
+     <h1>MANTENEDOR DE EMPLEADOS Y USUARIOS</h1>
+     <ion-item>
+       <ion-label>ID USUARI@/EMPLEAD@:</ion-label>
+       <ion-input color="warning" type="number" [(ngModel)]="id_producto" disabled="true"></ion-input>
+     </ion-item>
+  
+    <ion-item>
+      <ion-label>NOMBRE:</ion-label>
+      <ion-input class="casilla" type="text" [(ngModel)]="nombre_producto"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>OCUPACION:</ion-label>
+      <ion-input class="casilla" type="number" [(ngModel)]="precio"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>EDAD:</ion-label>
+      <ion-input class="casilla" type="number" [(ngModel)]="stock"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label >FECHA NACIMIENTO:</ion-label>
+      <ion-input class="casilla"  type="date"  [(ngModel)]="fecha_caducidad"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" (click)="insertarProducto()" expand= "block" color="warning" class="boton" >AGREGAR</ion-button>
+    <ion-button type="submit" (click)="acrualizarProducto()" expand= "block" color="warning" class="boton" >ACTUALIZAR</ion-button>
+    
+  </div>
+
+  <div>
+    <footer>
+      <ul class="contenedor-footer">
+          <li> <a href="https://www.youtube.com/watch?v=mCdA4bJAGGk&ab_channel=sweetblue.">Quienes somos </a> </li>
+          <li> <a href="https://www.carabineros.cl/">Nuestros contactos </a> </li>
+          <li> <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf4RvETJKsnK1qQaEVgRM-5wmetRCLy1tvr0kHtBd5tWuSGBRbtlOG1dsLDZ_BYxInDuU&usqp=CAU">nuestras redes sociales </a> </li>
+          <li> <a href="https://www.psicologia-online.com/preguntas-existenciales-para-pensar-5876.html">Tienes dudas? </a> </li>
+      </ul>
+    </footer>
+  </div>
+
+</ion-content>

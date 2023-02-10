@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detalle-producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <ion-avatar>
+        <img src="https://as01.epimg.net/meristation/imagenes/2021/01/29/noticias/1611955089_569691_1611955141_noticia_normal.jpg"/>
+      </ion-avatar>
+      
+      <ion-card-header >
+        <ion-card-subtitle>PRECIO: ${{precio}}</ion-card-subtitle>
+        <ion-card-title>ID:{{id_producto}} {{nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Descripcion: {{descripcion}}
+      </ion-card-content>
+    </ion-card>
+    <ion-button (click)="disminuir()">-</ion-button>
+    <p>Cantidad:{{cantidad}}</p>
+    <ion-button (click)="aumentar()">+</ion-button>
+  </div>
+  <p>TOTAL: {{total}}</p>
+  <ion-button (click)="agregar()">AGREGAR AL CARRITO</ion-button>
+</ion-content>

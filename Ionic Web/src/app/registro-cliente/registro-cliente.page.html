@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="warning">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">¡¡ Registratre aqui !!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo-agre">
+  <div class="colorr">
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-input type="text" [(ngModel)]="usuario" >NOMBRE DE USUARIO</ion-input>
+        <ion-input type="text" [(ngModel)]="rut_cliente">INGRESE SU RUT</ion-input>
+        <ion-input type="text" [(ngModel)]="nombre">NOMBRE</ion-input>
+        <ion-input type="text" [(ngModel)]="apellido">apellido</ion-input>
+        <ion-input type="number" [(ngModel)]="telefono">telefono</ion-input>
+        <ion-input type="text" [(ngModel)]="direccion">direccion</ion-input>
+        <ion-input type="text" [(ngModel)]="correo">CORREO</ion-input>
+        <ion-input type="text" [(ngModel)]="contrasena" >contraseña</ion-input>
+        <ion-button type="submit" color="warning" expand= "block" (click)="insertarCliente()">Registrar</ion-button>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</div>
+</ion-content>

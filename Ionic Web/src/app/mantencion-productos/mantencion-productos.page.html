@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>
+      Musicpro
+    </ion-title>
+  </ion-toolbar>
+</ion-header >
+<div *ngFor="let pr of productos" >
+  <ion-card (click)="mostrar_detalle(pr.id_producto)">
+    <ion-avatar>
+      <img src="https://as01.epimg.net/meristation/imagenes/2021/01/29/noticias/1611955089_569691_1611955141_noticia_normal.jpg"/>
+    </ion-avatar>
+    
+    <ion-card-header >
+      <ion-card-subtitle>PRECIO: ${{pr.precio}}</ion-card-subtitle>
+      <ion-card-title>ID:{{pr.id_producto}} - {{pr.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{pr.descripcion}}
+    </ion-card-content>
+  </ion-card>
+</div>

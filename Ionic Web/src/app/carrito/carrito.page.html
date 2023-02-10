@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let pc of lista_prod_carro">
+    <ion-item>
+      <p>Cantidad:{{pc.cantidad}} x Nombre:{{pc.producto.nombre}} - Precio: ${{pc.producto.precio}} => {{pc.cantidad * pc.producto.precio}}</p>
+    </ion-item>
+    <ion-button (click)="eliminar(pc.producto.id_producto)">Eliminar</ion-button>
+  </div>
+  <p>Total: {{total}}</p>
+</ion-content>
